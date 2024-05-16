@@ -66,6 +66,8 @@
 <ref refid="a78e8142-0951-11ef-aa8f-f3905a651819"/>
 <ref refid="2642355a-09b1-11ef-b075-f3905a651819"/>
 <ref refid="39cdda57-09b1-11ef-8205-f3905a651819"/>
+<ref refid="a1ae355e-09b1-11ef-86f5-57ea1275744a"/>
+<ref refid="bed09839-09b1-11ef-adc9-57ea1275744a"/>
 </reflist>
 </ownedPresentation>
 </Diagram>
@@ -108,10 +110,11 @@
 <ref refid="d7dec5ea-eab8-11ee-b82f-53d0c773c48b"/>
 <ref refid="589aac06-f6bd-11ee-be5d-5b14a1e8ea59"/>
 <ref refid="3a77a9d8-09b1-11ef-9eb4-f3905a651819"/>
+<ref refid="c412c8e2-09b1-11ef-9603-57ea1275744a"/>
 </reflist>
 </clientDependency>
 <name>
-<val>Profissional da Graxa</val>
+<val>Profissional Técnico</val>
 </name>
 <package>
 <ref refid="aff74f4b-f6bc-11ee-b891-5b14a1e8ea59"/>
@@ -132,7 +135,7 @@
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>101.0</val>
+<val>105.0</val>
 </width>
 <height>
 <val>59.0</val>
@@ -145,9 +148,39 @@
 </subject>
 </C4PersonItem>
 <C4Container id="d25aab5b-eab8-11ee-81b9-53d0c773c48b">
+<description>
+<val></val>
+</description>
 <name>
 <val>Sistema de Cadastro</val>
 </name>
+<note>
+<val>Sistema que captura os dados relevantes dos indíviduos da classe. Esses dados são usados primariamente para a compilação de dados estatísticos sobre a classe em si (contexto de articulação), e para busca por profissionais (contexto de conexão).
+
+Os dados capturados no cadastro precisam necessariamente conter:
+- Nome Social
+- Nome Artístico*
+- Foto de Perfil
+- Nivel de escolaridade
+- Ceac da pessoa*
+- CNPJ*
+- Localidade (cidade, estado)
+- Sexualidade (hetero, homo, bi/pan, asexual, outro, não quero divulgar.)
+- Se é trans ou não
+- Gênero (masculino, feminino, não-binárie)*
+- Profissão** (pode ter múltiplas)
+- Mini-Bio*
+
+*: Só se houver. Não é obrigatório
+
+**: Para profissão, temos uma consideração interessante sobre como essa informação será definida: queremos que seja uma lista finita definida ou um campo livre? Com uma lista finita fica mais simples de calcular e compreender distribuição na classe (não tem 8 versões do mesmo cargo usando termos diferentes e/ou erros de soletração), mas entramos no caso perigoso de excluir grupos de profissionais. Só ter um campo "outro: _____" é uma opção. Usar uma lógica avançada com tags/sugestões/autocomplete/elastic search pode ser a solução ideal, apesar de mais complicada. Esses detalhes não são necessários de serem decididos agora, mas acho interessante documentar essa questão já aqui para orientar a equipe design/dev que lê esse arquivo ao construir o sistema.
+
+Dados que achamos útil definir aqui que *não* são necessários capturarmos no cadastro:
+- Nome legal
+- CPF
+- CEP
+- Certificações?? Não consigo imaginar como ficaria, acho que dá pra só deixar a pessoa colocar na mini bio dela</val>
+</note>
 <package>
 <ref refid="b472baea-f6bc-11ee-9ae4-5b14a1e8ea59"/>
 </package>
@@ -179,7 +212,7 @@
 <val>181.0</val>
 </width>
 <height>
-<val>50.0</val>
+<val>59.0</val>
 </height>
 <diagram>
 <ref refid="175611b4-6c1d-11ec-b539-0456e5e540ed"/>
@@ -205,7 +238,7 @@
 <val>(1.0, 0.0, 0.0, 1.0, 901.279676304003, 207.88616180419922)</val>
 </matrix>
 <points>
-<val>[(179.21167547890536, 288.8866319210919), (179.46061273657688, 493.44268948085573)]</val>
+<val>[(179.21167547890536, 297.8866319210919), (182.69348407572215, 493.44268948085573)]</val>
 </points>
 <head-connection>
 <ref refid="d25b08bc-eab8-11ee-9c55-53d0c773c48b"/>
@@ -238,7 +271,7 @@
 <note>
 <val>**Para fonte da verdade atualizada, checar "Contexto - Articulação" no Glossário oficial do LabFaz Digital**
 
-Objetivos: Auxiliar articuladores a luta política pelos direitos e necessidades da classe, provendo uma transparente e inteligente visualização e análise de dados relevantes da classe para embasar argumentos para legislação e regulamentação.
+Objetivos: Auxiliar articuladores na luta política pelos direitos e necessidades da classe, provendo uma transparente e inteligente visualização e análise de dados relevantes da classe para embasar argumentos para legislação e regulamentação.
 
 Garantir que políticos compreendam as características, circunstâncias específicas e necessidades da classe de trabalhadores da técnica, procurando orientar regulamentação e legislação sobre ela. Isso se dá, por exemplo, divulgando pesquisas realizadas pela ANTT e terceiros, assim como textos de especialistas e pesquisadores sobre temas de relevância para o setor.
 
@@ -252,7 +285,7 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 </Comment>
 <CommentItem id="3c7ca7c4-ec46-11ee-b395-8f9e74a3ac35">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 19.1416549682619, 323.25499186088706)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 20.132223341200234, 322.692289794091)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -290,11 +323,6 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 <name>
 <val>1. Context Diagrams</val>
 </name>
-<nestedPackage>
-<reflist>
-<ref refid="f92c8f70-09b0-11ef-9237-f3905a651819"/>
-</reflist>
-</nestedPackage>
 <ownedDiagram>
 <reflist>
 <ref refid="175611b4-6c1d-11ec-b539-0456e5e540ed"/>
@@ -802,7 +830,7 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 <val>(1.0, 0.0, 0.0, 1.0, 663.54248046875, 335.1271138020883)</val>
 </matrix>
 <points>
-<val>[(365.813720703125, 10.2651819547076), (57.3525390625, 9.466819682577125)]</val>
+<val>[(361.546630859375, 15.305166144465659), (57.3525390625, 9.466819682577125)]</val>
 </points>
 <head-connection>
 <ref refid="308dc550-f6bd-11ee-a290-5b14a1e8ea59"/>
@@ -825,10 +853,10 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 <ref refid="225ffcb7-f5ee-11ee-9806-1f4b182b9bb8"/>
 </subject>
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 742.5973588815478, 465.3019820844379)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 742.5973588815478, 463.6808858259534)</val>
 </matrix>
 <points>
-<val>[(244.13835019494684, 5.276812685171478), (-146.663523755117, 5.276812685171478), (-146.663523755117, 18.32626223686657)]</val>
+<val>[(244.13835019494684, 11.182989131633235), (-146.663523755117, 11.182989131633235), (-146.663523755117, 19.947358495351068)]</val>
 </points>
 <head-connection>
 <ref refid="d25b08bc-eab8-11ee-9c55-53d0c773c48b"/>
@@ -920,6 +948,7 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 <ref refid="d25aab5b-eab8-11ee-81b9-53d0c773c48b"/>
 <ref refid="375fc0a1-f5f1-11ee-b423-1f4b182b9bb8"/>
 <ref refid="ba1afcf9-0951-11ef-87f0-f3905a651819"/>
+<ref refid="f92c8f70-09b0-11ef-9237-f3905a651819"/>
 </reflist>
 </nestedPackage>
 </Package>
@@ -987,13 +1016,13 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 </Dependency>
 <C4PersonItem id="1edac1a4-f6bd-11ee-a61f-5b14a1e8ea59">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 787.6295166015625, 516.4770380685895)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 691.1409912109375, 501.1404291818708)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>100.0</val>
+<val>105.0</val>
 </width>
 <height>
 <val>76.0</val>
@@ -1007,16 +1036,16 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 </C4PersonItem>
 <C4ContainerItem id="308dc550-f6bd-11ee-a290-5b14a1e8ea59">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 1029.356201171875, 308.5939334846654)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 1025.089111328125, 302.90106201171875)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>100.0</val>
+<val>116.0</val>
 </width>
 <height>
-<val>72.0</val>
+<val>93.0</val>
 </height>
 <diagram>
 <ref refid="3c669cae-f5f0-11ee-827f-1f4b182b9bb8"/>
@@ -1058,7 +1087,7 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 <val>(1.0, 0.0, 0.0, 1.0, 775.7415161132812, 536.3438720703125)</val>
 </matrix>
 <points>
-<val>[(303.61468505859375, -155.7499385856471), (85.18027858452842, -19.866834001722964)]</val>
+<val>[(307.34759521484375, -140.44281005859375), (-7.643632901284263, -35.203442888441714)]</val>
 </points>
 <head-connection>
 <ref refid="308dc550-f6bd-11ee-a290-5b14a1e8ea59"/>
@@ -1084,7 +1113,7 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 <val>(1.0, 0.0, 0.0, 1.0, 731.1598510742188, 553.4315795898438)</val>
 </matrix>
 <points>
-<val>[(-100.76483154296875, -179.030517578125), (86.32289381148212, -36.954541521254214)]</val>
+<val>[(-100.76483154296875, -179.030517578125), (-8.672970164935919, -52.291150407972964)]</val>
 </points>
 <head-connection>
 <ref refid="375ffde0-f5f1-11ee-8aa8-1f4b182b9bb8"/>
@@ -1110,6 +1139,11 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 </supplier>
 </Dependency>
 <C4Person id="964de784-0951-11ef-bdb4-f3905a651819">
+<clientDependency>
+<reflist>
+<ref refid="a3312ccf-09b1-11ef-9f9c-57ea1275744a"/>
+</reflist>
+</clientDependency>
 <name>
 <val>Político</val>
 </name>
@@ -1129,7 +1163,7 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 </C4Person>
 <C4PersonItem id="964e655a-0951-11ef-a6c6-f3905a651819">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 321.82830709820263, 1112.0671423879237)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 491.1864782706471, 1102.0104407277674)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -1210,7 +1244,7 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 <val>(1.0, 0.0, 0.0, 1.0, 370.724365234375, 1086.1216542853267)</val>
 </matrix>
 <points>
-<val>[(-48.89605813617226, 63.869292790730015), (-203.151498582628, 55.445488102596755)]</val>
+<val>[(120.46211303627211, 53.812591130573765), (-203.151498582628, 55.445488102596755)]</val>
 </points>
 <head-connection>
 <ref refid="964e655a-0951-11ef-a6c6-f3905a651819"/>
@@ -1248,6 +1282,8 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 <reflist>
 <ref refid="c1004725-0951-11ef-978b-f3905a651819"/>
 <ref refid="c5c4a3d5-0951-11ef-bbb6-f3905a651819"/>
+<ref refid="a3312ccf-09b1-11ef-9f9c-57ea1275744a"/>
+<ref refid="c412c8e2-09b1-11ef-9603-57ea1275744a"/>
 </reflist>
 </supplierDependency>
 <type>
@@ -1278,6 +1314,9 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 <client>
 <ref refid="2f59477a-f5ee-11ee-98de-1f4b182b9bb8"/>
 </client>
+<name>
+<val>Consulta dados sobre a realidade da classe</val>
+</name>
 <presentation>
 <reflist>
 <ref refid="a2f5bb1f-0951-11ef-b47b-f3905a651819"/>
@@ -1305,7 +1344,7 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 <val>Blog</val>
 </name>
 <package>
-<ref refid="5c96884f-ec46-11ee-af33-8f9e74a3ac35"/>
+<ref refid="b472baea-f6bc-11ee-9ae4-5b14a1e8ea59"/>
 </package>
 <presentation>
 <reflist>
@@ -1383,13 +1422,13 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 </Dependency>
 <C4PersonItem id="2dca5532-09b1-11ef-b54e-f3905a651819">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, -135.34740686618923, 1106.5671423879237)</val>
+<val>(1.0, 0.0, 0.0, 1.0, -165.71875621654382, 1120.5104407277674)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>101.0</val>
+<val>105.0</val>
 </width>
 <height>
 <val>59.0</val>
@@ -1418,7 +1457,7 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 <val>(1.0, 0.0, 0.0, 1.0, -147.2995997299381, 1105.6907052174101)</val>
 </matrix>
 <points>
-<val>[(26.190377663131585, -173.04383912038668), (36.26181520061729, 0.8764371705135545)]</val>
+<val>[(-9.980358840700717, -173.04383912038668), (6.853223170534704, 14.819735510357305)]</val>
 </points>
 <head-connection>
 <ref refid="f92cd23e-09b0-11ef-b18e-f3905a651819"/>
@@ -1443,7 +1482,7 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 <ref refid="f92c8f70-09b0-11ef-9237-f3905a651819"/>
 </supplier>
 </Dependency>
-<DependencyItem id="eeeb75d2-f5ee-11ee-a4db-1f4b182b9bb8">
+<DependencyItem id="a1ae355e-09b1-11ef-86f5-57ea1275744a">
 <diagram>
 <ref refid="175611b4-6c1d-11ec-b539-0456e5e540ed"/>
 </diagram>
@@ -1453,11 +1492,78 @@ Difundir pela comunidade maior da indústria de eventos sobre as necessidades, c
 <orthogonal>
 <val>0</val>
 </orthogonal>
+<subject>
+<ref refid="a3312ccf-09b1-11ef-9f9c-57ea1275744a"/>
+</subject>
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 1174.1230318797734, 826.2686579997578)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 373.229761277994, 1113.4407780755373)</val>
 </matrix>
 <points>
-<val>[(30.0, 20.0), (0.0, 0.0)]</val>
+<val>[(-242.09753793679374, -225.29391197851385), (106.277587890625, -160.76882934570324), (169.35817117244443, -11.430337347769864)]</val>
 </points>
+<head-connection>
+<ref refid="ba1b42a3-0951-11ef-b1ca-f3905a651819"/>
+</head-connection>
+<tail-connection>
+<ref refid="964e655a-0951-11ef-a6c6-f3905a651819"/>
+</tail-connection>
 </DependencyItem>
+<Dependency id="a3312ccf-09b1-11ef-9f9c-57ea1275744a">
+<client>
+<ref refid="964de784-0951-11ef-bdb4-f3905a651819"/>
+</client>
+<name>
+<val>Consulta dados sobre a realidade da classe</val>
+</name>
+<presentation>
+<reflist>
+<ref refid="a1ae355e-09b1-11ef-86f5-57ea1275744a"/>
+</reflist>
+</presentation>
+<supplier>
+<ref refid="ba1afcf9-0951-11ef-87f0-f3905a651819"/>
+</supplier>
+</Dependency>
+<DependencyItem id="bed09839-09b1-11ef-adc9-57ea1275744a">
+<diagram>
+<ref refid="175611b4-6c1d-11ec-b539-0456e5e540ed"/>
+</diagram>
+<horizontal>
+<val>0</val>
+</horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
+<subject>
+<ref refid="c412c8e2-09b1-11ef-9603-57ea1275744a"/>
+</subject>
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 21.923897637262257, 1175.4195363654048)</val>
+</matrix>
+<points>
+<val>[(14.45851256651298, -242.77267026838126), (-69.22825501161202, -132.09921117072702), (-109.69638874234543, -54.90909563763739)]</val>
+</points>
+<head-connection>
+<ref refid="ba1b42a3-0951-11ef-b1ca-f3905a651819"/>
+</head-connection>
+<tail-connection>
+<ref refid="2dca5532-09b1-11ef-b54e-f3905a651819"/>
+</tail-connection>
+</DependencyItem>
+<Dependency id="c412c8e2-09b1-11ef-9603-57ea1275744a">
+<client>
+<ref refid="cb44b0c5-eab8-11ee-bb21-53d0c773c48b"/>
+</client>
+<name>
+<val>Consulta dados sobre a realidade da classe</val>
+</name>
+<presentation>
+<reflist>
+<ref refid="bed09839-09b1-11ef-adc9-57ea1275744a"/>
+</reflist>
+</presentation>
+<supplier>
+<ref refid="ba1afcf9-0951-11ef-87f0-f3905a651819"/>
+</supplier>
+</Dependency>
 </gaphor>
